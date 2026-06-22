@@ -42,6 +42,8 @@ export const atualizarTransito = async (req, res, next) => {
             modoEscolar: db.data.estadoTransito.modoEscolar,
             novasDiretrizesEscolar: tempoParaEnviar,
             abrirSemaforoPedestre: enviarComandoTravessia // <-- O ESP32 escuta ESSA variável para agir
+            fluxo1: db.data.estadoTransito.via1.fluxo
+            fluxo2: Db.data.estadoTransito.via2.fluxo
         });
     }
     catch (error) { next(error) }
@@ -50,6 +52,11 @@ export const atualizarTransito = async (req, res, next) => {
 export const obterStatus = (req, res) => {
     return res.status(200).json(db.data.estadoTransito)
 }
+export const attFluxo = (req, res) => {
+    try{
+        const {fluxo1,fluxo2} = req.body
+        db.data.estadoTransito.via1.fluxo = fluxo1
+        db.data.estadoTransito.via2.fluxo = fluxo2
 
 export const agendarModoEscolar = async (req, res, next) => {
     try {
