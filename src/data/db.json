@@ -1,14 +1,12 @@
 {
   "estadoTransito": {
     "via1": {
-      "filaMetros": 15,
       "estado": 1,
-      "fluxo": "Normal"
+      "fluxo": "BAIXO"
     },
     "via2": {
-      "filaMetros": 20,
       "estado": 3,
-      "fluxo": "Normal"
+      "fluxo": "BAIXO"
     },
     "pedestresAguardando": false,
     "modoEscolar": false,
