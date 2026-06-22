@@ -57,6 +57,9 @@ export const attFluxo = (req, res) => {
         const {fluxo1,fluxo2} = req.body
         db.data.estadoTransito.via1.fluxo = fluxo1
         db.data.estadoTransito.via2.fluxo = fluxo2
+    }
+    catch (error) { next(error); }
+}
 
 export const agendarModoEscolar = async (req, res, next) => {
     try {
