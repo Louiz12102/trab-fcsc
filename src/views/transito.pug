@@ -48,13 +48,11 @@ html(lang="pt-BR")
       /* --- MAQUETE DO CRUZAMENTO --- */
       .mapa-cruzamento { position: relative; width: 420px; height: 420px; background-color: #68d391; border-radius: 16px; margin: auto; overflow: hidden; border: 5px solid #1e293b; box-shadow: 0 12px 24px rgba(0,0,0,0.15); box-sizing: border-box; }
       
-      /* Alterado para verde (#68d391) e removido as bordas para parecer uma área contínua de grama */
       .calcada { position: absolute; background-color: #68d391; width: 140px; height: 140px; box-sizing: border-box; }
       .c-top-left { top: 0; left: 0; }
       .c-top-right { top: 0; right: 0; }
       .c-bottom-right { bottom: 0; right: 0; }
       
-      /* Canto inferior esquerdo com o texto da Escola */
       .c-bottom-left { bottom: 0; left: 0; display: flex; align-items: center; justify-content: center; }
       .texto-escola { font-size: 14px; font-weight: 800; color: #1e293b; letter-spacing: 1px; text-transform: uppercase; border: 2px dashed #1e293b; padding: 4px 8px; border-radius: 4px; background-color: rgba(255,255,255,0.6); user-select: none; }
 
@@ -100,13 +98,15 @@ html(lang="pt-BR")
         
         .card.via-1-card
           h3 Via 1 (Eixo Horizontal)
-          .detalhe-item Fluxo de Veículos: <strong id="fluxo-via1">--</strong>
-          .detalhe-item Status do Semáforo: <strong id="texto-estado-v1">--</strong>
+          .detalhe-item Fluxo de Veículos: #[strong#fluxo-via1 --]
+          .detalhe-item Extensão da Fila (m): #[strong#fila-via1 --]
+          .detalhe-item Status do Semáforo: #[strong#texto-estado-v1 --]
           
         .card.via-2-card
           h3 Via 2 (Eixo Vertical)
-          .detalhe-item Fluxo de Veículos: <strong id="fluxo-via2">--</strong>
-          .detalhe-item Status do Semáforo: <strong id="texto-estado-v2">--</strong>
+          .detalhe-item Fluxo de Veículos: #[strong#fluxo-via2 --]
+          .detalhe-item Extensão da Fila (m): #[strong#fila-via2 --]
+          .detalhe-item Status do Semáforo: #[strong#texto-estado-v2 --]
 
         .card
           h3 Sistema de Pedestres
@@ -120,25 +120,37 @@ html(lang="pt-BR")
 
       .mapa-cruzamento
         .calcada.c-top-left
+          | 
         .calcada.c-top-right
+          | 
         
-        // Canto inferior esquerdo com fundo verde integrado e placa Escola nítida
+        //- Canto inferior esquerdo com fundo verde integrado e placa Escola nítida
         .calcada.c-bottom-left
           span.texto-escola 🏫 Escola
           
         .calcada.c-bottom-right
+          | 
         
         .rua-vertical
+          | 
         .rua-horizontal
+          | 
         .cruzamento-centro
+          | 
         
         .faixa-pedestre-h.faixa-left
+          | 
         .faixa-pedestre-h.faixa-right
+          | 
         .faixa-pedestre-v.faixa-top
+          | 
         .faixa-pedestre-v.faixa-bottom
+          | 
         
         .linha-parada-v1
+          | 
         .linha-parada-v2
+          | 
         
         #bloco-v1.semaforo-container
           .placa-via VIA 1
@@ -155,7 +167,7 @@ html(lang="pt-BR")
             .luz.verde
 
     script.
-      function obterTextoEstado(codigo) {
+      function obtenerTextoEstado(codigo) {
         if (codigo === 1) return "🟢 VERDE (Fluxo Livre)";
         if (codigo === 2) return "🟡 AMARELO (Atenção Aumentada)";
         if (codigo === 3) return "🔴 VERMELHO (Retenção Total)";
